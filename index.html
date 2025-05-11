@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TRYITON - Login/Register</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function toggleForm() {
+      const heading = document.getElementById("form-heading");
+      const button = document.getElementById("form-button");
+      const link = document.getElementById("toggle-link");
+      const loginFields = document.querySelector(".login-fields");
+      const registerFields = document.querySelector(".register-fields");
+
+      if (heading.innerText === "Login") {
+        heading.innerText = "Register";
+        button.innerText = "Register";
+        link.innerText = "Already have an account? Login";
+        loginFields.style.display = "none";
+        registerFields.style.display = "block";
+      } else {
+        heading.innerText = "Login";
+        button.innerText = "Login";
+        link.innerText = "Don't have an account? Register";
+        loginFields.style.display = "block";
+        registerFields.style.display = "none";
+      }
+    }
+
+    window.onload = () => {
+      // Show login by default
+      document.querySelector(".login-fields").style.display = "block";
+      document.querySelector(".register-fields").style.display = "none";
+    };
+  </script>
+</head>
+<body>
+  <div class="main-layout">
+    <div class="logo-section">
+      <div class="logo-box">
+        <div class="camera-icon">
+          <div class="camera-top"></div>
+          <div class="camera-body">
+            <div class="lens-ring">
+              <div class="lens-core"></div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-year">2025</div>
+        <div class="brand-name">TRYITON</div>
+        <div class="brand-tagline">Virtual fitting room</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="form-container">
+        <h2 id="form-heading">Login</h2>
+        <form>
+          <!-- Login Fields -->
+          <div class="login-fields">
+            <div class="form-group">
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" required>
+            </div>
+          </div>
+
+          <!-- Register Fields -->
+          <div class="register-fields">
+            <div class="form-group">
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Contact Number" required>
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Confirm Password" required>
+            </div>
+          </div>
+
+          <button id="form-button" type="submit">Login</button>
+        </form>
+        <a href="#" class="toggle-link" id="toggle-link" onclick="toggleForm()">Don't have an account? Register</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

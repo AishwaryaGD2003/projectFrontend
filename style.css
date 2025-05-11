@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #e6e1f5, #c7b3ec);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.main-layout {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* LEFT SIDE (LOGO SECTION) */
+.logo-section {
+  width: 50%;
+  background-color: #f4eefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box {
+  text-align: center;
+  color: #40005c;
+}
+
+/* Camera Icon Container */
+.camera-icon {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  margin: 0 auto 10px;
+}
+
+/* Camera Body */
+.camera-body {
+  background-color: #40005c;
+  width: 100%;
+  height: 70px;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Camera Top Buttons */
+/* .camera-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.camera-top::before,
+.camera-top::after,
+.camera-top {
+  content: '';
+  display: block;
+  background-color: #40005c;
+  width: 20px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.camera-top::before {
+  margin-left: -45px;
+}
+
+.camera-top::after {
+  margin-left: 45px;
+} */
+
+/* Camera Top Button (Right Side Only) */
+.camera-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Remove left and middle, only show right button */
+.camera-top::before {
+  content: none;
+}
+
+/* Right-side button */
+.camera-top::after {
+  content: '';
+  display: block;
+  background-color: #40005c;
+  width: 20px;
+  height: 10px;
+  border-radius: 2px;
+  margin-left: 70px; 
+  margin-top: 15px; 
+}
+
+
+/* Lens Ring */
+.lens-ring {
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner Lens Core */
+.lens-core {
+  width: 16px;
+  height: 16px;
+  background-color: #40005c;
+  border-radius: 50%;
+}
+
+/* Branding */
+.brand-year {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.brand-name {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-top: 15px;
+  letter-spacing: 3px;
+}
+
+.brand-tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 5px;
+  font-family: 'Georgia', serif;
+}
+
+/* RIGHT SIDE (FORM) */
+.form-section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  color: white;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: white;
+  color: #333;
+}
+
+input:focus {
+  box-shadow: 0 0 5px #8e44ad;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2rem;
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #732d91;
+}
+
+.toggle-link {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
